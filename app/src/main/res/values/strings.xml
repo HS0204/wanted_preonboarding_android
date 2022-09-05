@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">News App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="top_news">Top News</string>
+    <string name="categories">Categories</string>
+    <string name="saved_news">Saved News</string>
 </resources>
