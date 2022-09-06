@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/drawable/circle_stroke.xml" value="0.318" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/activity_main.xml" value="0.31875" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/fragment_categories.xml" value="0.32382246376811596" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/fragment_news_detail.xml" value="0.32382246376811596" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/fragment_news_list.xml" value="0.32382246376811596" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/fragment_saved_news_list.xml" value="0.32382246376811596" />
-        <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/layout_news_list.xml" value="0.25" />
+        <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/layout_categories_list.xml" value="0.5" />
+        <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/layout/layout_news_list.xml" value="0.33" />
         <entry key="..\:/HS/android_programming/wanted_preonboarding_android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33489583333333334" />
       </map>
     </option>
