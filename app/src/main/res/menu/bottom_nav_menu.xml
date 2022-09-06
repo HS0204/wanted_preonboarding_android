@@ -4,7 +4,7 @@
     <item
         android:id="@+id/newsListFragment"
         android:title="@string/top_news"
-        android:icon="@drawable/ic_baseline_wysiwyg_24"/>
+        android:icon="@drawable/ic_baseline_wysiwyg_24" />
     <item
         android:id="@+id/categoriesFragment"
         android:title="@string/categories"
