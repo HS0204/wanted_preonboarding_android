@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- News List -->
+    <dimen name="card_view_radius">5dp</dimen>
+    <dimen name="card_view_img_height">180dp</dimen>
+    <dimen name="card_view_height">20dp</dimen>
+    <dimen name="card_view_txt_height">8dp</dimen>
+    <dimen name="card_view_padding">16dp</dimen>
+</resources>

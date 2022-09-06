@@ -4,4 +4,9 @@
     <string name="top_news">Top News</string>
     <string name="categories">Categories</string>
     <string name="saved_news">Saved News</string>
+
+    <!-- News List -->
+    <string name="news_article_title">기사 제목</string>
+    <string name="news_article_writer">작가 이름</string>
+    <string name="news_article_time">업로드 시간</string>
 </resources>
