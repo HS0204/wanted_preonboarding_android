@@ -1,30 +1,13 @@
 package com.hs.newsapp.fragment.categories
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import com.hs.newsapp.R
+import com.hs.newsapp.config.BaseFragment
 import com.hs.newsapp.databinding.FragmentCategoriesBinding
 
-class CategoriesFragment : Fragment() {
+class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
+    FragmentCategoriesBinding::bind,
+    R.layout.fragment_categories
+) {
 
-    private var _binding: FragmentCategoriesBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentCategoriesBinding.inflate(inflater, container, false)
-        val view = binding
-
-        return view.root
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
 
 }
