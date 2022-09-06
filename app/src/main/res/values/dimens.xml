@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="fragment_padding">20dp</dimen>
+
     <!-- News List -->
     <dimen name="card_view_radius">5dp</dimen>
     <dimen name="card_view_img_height">180dp</dimen>

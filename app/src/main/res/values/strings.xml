@@ -11,5 +11,6 @@
     <string name="news_article_time">업로드 시간</string>
 
     <!-- Categories List -->
+    <string name="categories_list_header">Choose a category to start reading</string>
     <string name="categories_list_name">카테고리 이름</string>
 </resources>
