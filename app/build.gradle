@@ -4,7 +4,12 @@ plugins {
     id 'org.jetbrains.kotlin.kapt'
 }
 
+Properties properties = new Properties()
+properties.load(project.file('local.properties').newDataInputStream())
+
 android {
+    task prepareKotlinBuildScriptModel {
+    }
     compileSdk 32
 
     defaultConfig {
@@ -15,6 +20,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "NEWS_API_KEY", properties['news_api_key']
     }
 
     buildTypes {
@@ -46,6 +52,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    implementation 'com.android.databinding:viewbinding:7.2.2'
+
     // navigation
     def nav_version = "2.5.1"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -67,4 +75,18 @@ dependencies {
     // coroutine
 
     // retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    // Retrofit with Moshi Converter
+    //implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    // Moshi
+    //implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
+
+    // okhttp
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    // Coil
+    implementation "io.coil-kt:coil:1.1.1"
 }
