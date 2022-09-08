@@ -26,17 +26,10 @@ class ApplicationClass : Application() {
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build()
 
-        /*
-        val moshi = Moshi.Builder()
-                .add(KotlinJsonAdapterFactory())
-                .build()
-
-         */
         sRetrofit = Retrofit.Builder()
                 .baseUrl(API_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
-                //.addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build()
     }
 }
