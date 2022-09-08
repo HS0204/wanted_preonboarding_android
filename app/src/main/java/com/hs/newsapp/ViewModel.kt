@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hs.newsapp.fragment.newsList.NewsListService
+import com.hs.newsapp.ui.newsList.NewsListService
 import com.hs.newsapp.model.Article
 import kotlinx.coroutines.launch
 

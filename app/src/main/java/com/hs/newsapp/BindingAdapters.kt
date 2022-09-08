@@ -1,13 +1,11 @@
 package com.hs.newsapp
 
-import android.service.quicksettings.Tile
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.hs.newsapp.fragment.newsList.NewsListAdapter
+import com.hs.newsapp.ui.newsList.NewsListAdapter
 import com.hs.newsapp.model.Article
 
 @BindingAdapter("imageUrl")

@@ -1,4 +1,4 @@
-package com.hs.newsapp.fragment.newsList
+package com.hs.newsapp.ui.newsList
 
 import android.os.Bundle
 import android.view.View

@@ -1,4 +1,4 @@
-package com.hs.newsapp.fragment.newsList
+package com.hs.newsapp.ui.newsList
 
 import com.hs.newsapp.config.ApplicationClass
 

@@ -1,4 +1,4 @@
-package com.hs.newsapp.fragment.newsDetail
+package com.hs.newsapp.ui.newsDetail
 
 import com.hs.newsapp.R
 import com.hs.newsapp.config.BaseFragment

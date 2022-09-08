@@ -1,4 +1,4 @@
-package com.hs.newsapp.fragment.categories
+package com.hs.newsapp.ui.categories
 
 import com.hs.newsapp.R
 import com.hs.newsapp.config.BaseFragment

@@ -1,4 +1,4 @@
-package com.hs.newsapp.fragment.newsList
+package com.hs.newsapp.ui.newsList
 
 import com.hs.newsapp.model.TopNews
 import retrofit2.http.GET
