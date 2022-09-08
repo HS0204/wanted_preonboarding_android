@@ -34,11 +34,13 @@
 
             <ImageView
                 android:id="@+id/detail_article_save_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="@dimen/fragment_padding"
                 android:layout_weight="1"
+                android:onClick="@{() -> viewmodel.insertDataToDatabase()}"
                 android:src="@drawable/ic_baseline_star_outline_24"
+                savedStatus="@{viewmodel.article.savedStatus}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/detail_article_title"
                 app:layout_constraintTop_toTopOf="parent" />

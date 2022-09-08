@@ -6,7 +6,6 @@ import androidx.lifecycle.*
 import com.hs.newsapp.config.ApplicationClass
 import com.hs.newsapp.ui.newsList.NewsListService
 import com.hs.newsapp.model.Article
-import com.hs.newsapp.model.SavedArticle
 import com.hs.newsapp.repository.SavedArticleRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,9 +14,6 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     enum class NewsListStatus { LOADING, ERROR, DONE }
 
-    /**
-     News List
-     **/
     private val _status = MutableLiveData<NewsListStatus>()
     val status: LiveData<NewsListStatus> = _status
 
@@ -27,13 +23,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _article = MutableLiveData<Article>()
     val article: LiveData<Article> = _article
 
-    /**
-    Saved News List
-     **/
-    private val _savedArticle = MutableLiveData<SavedArticle>()
-    val savedArticle: LiveData<SavedArticle> = _savedArticle
-
-    val readAllData: LiveData<List<SavedArticle>>
+    val readAllData: LiveData<List<Article>>
     private val repository: SavedArticleRepository
 
     init {
@@ -66,13 +56,28 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         _article.value = article
     }
 
-    fun onSavedArticleClicked(article: SavedArticle) {
-        _savedArticle.value = article
-    }
-
-    fun addArticle(article: SavedArticle) {
+    fun addArticle(article: Article) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addArticle(article)
+        }
+    }
+
+    fun insertDataToDatabase() {
+        val writer = _article.value?.author
+        val content = _article.value!!.content
+        val description = _article.value!!.description
+        val publishedAt = _article.value!!.publishedAt
+        val title = _article.value!!.title
+        val url = _article.value!!.url
+        val urlToImage = _article.value!!.urlToImage
+
+        /** !!!!!!!!!NULL 체크 완벽하지 않음!!!!!!! **/
+        if (writer == null) {
+            val curArticle = Article(0, "-", content, description, publishedAt, title, url, urlToImage, "1")
+            addArticle(curArticle)
+        } else {
+            val curArticle = Article(0, writer, content, description, publishedAt, title, url, urlToImage, "1")
+            addArticle(curArticle)
         }
     }
 
