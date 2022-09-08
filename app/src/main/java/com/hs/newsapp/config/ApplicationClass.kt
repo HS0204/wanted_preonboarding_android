@@ -1,6 +1,9 @@
 package com.hs.newsapp.config
 
 import android.app.Application
+import android.content.Context
+import androidx.room.Room
+import com.hs.newsapp.data.SavedArticleDatabase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,6 +15,25 @@ class ApplicationClass : Application() {
 
     companion object {
         lateinit var sRetrofit: Retrofit
+
+        @Volatile
+        var DB_INSTANCE: SavedArticleDatabase? = null
+
+        fun getDatabase(context: Context): SavedArticleDatabase {
+            val tempInstance = DB_INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
+            }
+            synchronized(this) {
+                val instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        SavedArticleDatabase::class.java,
+                        "saved_article_database"
+                ).build()
+                DB_INSTANCE = instance
+                return instance
+            }
+        }
     }
 
     override fun onCreate() {
