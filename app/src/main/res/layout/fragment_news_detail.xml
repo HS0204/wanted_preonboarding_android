@@ -14,37 +14,35 @@
         style="@style/fragment_padding"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="@dimen/fragment_padding"
         tools:context=".ui.newsDetail.NewsDetailFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/detail_article_header"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/detail_article_title"
+                style="@style/article_title"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="5"
+                android:text="@{viewmodel.article.title}"
+                app:layout_constraintEnd_toStartOf="@id/detail_article_save_icon"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/news_article_title" />
 
-                <TextView
-                    android:id="@+id/detail_article_title"
-                    style="@style/article_title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:text="@{viewmodel.article.title}"
-                    tools:text="@string/news_article_title" />
-
-                <ImageView
-                    android:id="@+id/detail_article_save_icon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_category_24" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/detail_article_save_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_padding"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_star_outline_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/detail_article_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/detail_article_writer"
@@ -52,7 +50,7 @@
                 android:layout_marginVertical="10dp"
                 android:text="@{viewmodel.article.author}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/detail_article_header"
+                app:layout_constraintTop_toBottomOf="@id/detail_article_title"
                 tools:text="@string/news_article_writer" />
 
             <TextView
@@ -66,14 +64,20 @@
                 app:layout_constraintTop_toTopOf="@id/detail_article_writer"
                 tools:text="@string/news_article_time" />
 
-            <ImageView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/detail_article_img"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/card_view_img_height"
                 android:layout_marginVertical="10dp"
-                android:src="@color/secondaryDarkColor"
-                app:imageUrl="@{viewmodel.article.urlToImage}"
-                app:layout_constraintTop_toBottomOf="@id/detail_article_writer" />
+                app:cardCornerRadius="@dimen/card_view_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/detail_article_writer">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/secondaryDarkColor"
+                    app:imageUrl="@{viewmodel.article.urlToImage}" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/detail_article_content"
@@ -91,4 +95,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
+
 </layout>

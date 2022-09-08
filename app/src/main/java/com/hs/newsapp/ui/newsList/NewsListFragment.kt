@@ -6,6 +6,7 @@ import androidx.navigation.fragment.findNavController
 import com.hs.newsapp.R
 import com.hs.newsapp.config.BaseFragment
 import com.hs.newsapp.databinding.FragmentNewsListBinding
+import com.hs.newsapp.ui.RecyclerViewMargin
 
 class NewsListFragment : BaseFragment<FragmentNewsListBinding>(FragmentNewsListBinding::bind, R.layout.fragment_news_list) {
 
@@ -16,6 +17,7 @@ class NewsListFragment : BaseFragment<FragmentNewsListBinding>(FragmentNewsListB
 
         binding.viewModel = sharedViewModel
 
+        binding.newsListRecyclerView.addItemDecoration(RecyclerViewMargin())
         binding.newsListRecyclerView.adapter = NewsListAdapter(ArticleListener { article ->
             sharedViewModel.onArticleClicked(article)
             findNavController().navigate(R.id.action_newsListFragment_to_newsDetailFragment)

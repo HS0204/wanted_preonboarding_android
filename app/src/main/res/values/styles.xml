@@ -2,7 +2,6 @@
 <resources>
 
     <style name="fragment_padding">
-        <item name="android:paddingTop">@dimen/fragment_padding</item>
         <item name="android:paddingStart">@dimen/fragment_padding</item>
         <item name="android:paddingEnd">@dimen/fragment_padding</item>
     </style>

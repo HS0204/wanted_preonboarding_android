@@ -14,10 +14,9 @@
             type="com.hs.newsapp.ui.newsList.ArticleListener" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/card_view_margin_bottom"
         android:onClick="@{() -> clickListener.onClick(article)}"
         app:cardCornerRadius="@dimen/card_view_radius">
 
@@ -31,12 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/card_view_img_height"
                 android:src="@color/secondaryDarkColor"
-                app:imageUrl="@{article.urlToImage}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0" />
+                app:imageUrl="@{article.urlToImage}" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -82,5 +76,5 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
