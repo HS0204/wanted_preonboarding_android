@@ -14,26 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bec15680-d4ce-46e4-b769-09d8521c501a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/config/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/config/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsDetail/NewsDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsDetail/NewsDetailFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_news_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_news_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/layout_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/layout_news_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CN602P85Y]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -42,8 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
