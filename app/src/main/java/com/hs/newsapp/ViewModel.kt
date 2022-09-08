@@ -7,7 +7,7 @@ import com.hs.newsapp.config.ApplicationClass
 import com.hs.newsapp.ui.newsList.NewsListService
 import com.hs.newsapp.model.Article
 import com.hs.newsapp.model.SavedArticle
-import com.hs.newsapp.remository.SavedArticleRepository
+import com.hs.newsapp.repository.SavedArticleRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -27,12 +27,12 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _article = MutableLiveData<Article>()
     val article: LiveData<Article> = _article
 
+    /**
+    Saved News List
+     **/
     private val _savedArticle = MutableLiveData<SavedArticle>()
     val savedArticle: LiveData<SavedArticle> = _savedArticle
 
-    /**
-     Saved News List
-     **/
     val readAllData: LiveData<List<SavedArticle>>
     private val repository: SavedArticleRepository
 

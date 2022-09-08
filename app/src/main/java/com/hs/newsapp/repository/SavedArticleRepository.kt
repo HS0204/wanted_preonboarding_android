@@ -1,4 +1,4 @@
-package com.hs.newsapp.remository
+package com.hs.newsapp.repository
 
 import androidx.lifecycle.LiveData
 import com.hs.newsapp.data.SavedArticleDao

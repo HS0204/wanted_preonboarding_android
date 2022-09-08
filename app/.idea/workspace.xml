@@ -14,13 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bec15680-d4ce-46e4-b769-09d8521c501a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/BindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/BindingAdapters.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/saved/SavedNewsListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/saved/SavedNewsListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_news_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_saved_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_saved_news_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/remository/SavedArticleRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/repository/SavedArticleRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

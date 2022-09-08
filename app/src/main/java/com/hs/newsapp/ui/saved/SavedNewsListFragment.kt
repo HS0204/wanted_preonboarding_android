@@ -7,8 +7,6 @@ import com.hs.newsapp.R
 import com.hs.newsapp.config.BaseFragment
 import com.hs.newsapp.databinding.FragmentSavedNewsListBinding
 import com.hs.newsapp.ui.RecyclerViewMargin
-import com.hs.newsapp.ui.newsList.ArticleListener
-import com.hs.newsapp.ui.newsList.NewsListAdapter
 
 class SavedNewsListFragment : BaseFragment<FragmentSavedNewsListBinding>(FragmentSavedNewsListBinding::bind, R.layout.fragment_saved_news_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
