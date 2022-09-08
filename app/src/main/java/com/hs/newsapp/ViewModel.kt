@@ -19,6 +19,9 @@ class ViewModel : ViewModel() {
     private val _articles = MutableLiveData<List<Article>>()
     val articles: LiveData<List<Article>> = _articles
 
+    private val _article = MutableLiveData<Article>()
+    val article: LiveData<Article> = _article
+
     init {
         Log.d("test", "뷰모델 시작")
         tryGetNewsList()
@@ -31,7 +34,6 @@ class ViewModel : ViewModel() {
                 Log.d("test", "성공")
                 val response = NewsListService.newsListService.getNews(country = "kr", apiKey = BuildConfig.NEWS_API_KEY)
                 _articles.value = response.articles
-                Log.d("test", "${_articles.value}")
                 _status.value = NewsListStatus.DONE
             } catch (e: Exception) {
                 Log.d("test", "실패 이유 ${e}")
@@ -40,27 +42,10 @@ class ViewModel : ViewModel() {
             }
             Log.d("test", "끝")
         }
+    }
 
-
-        /*
-        NewsListService.newListService.getNews(country = "kr", apiKey = BuildConfig.NEWS_API_KEY ).enqueue(object : Callback<TopNews> {
-            override fun onResponse(call: Call<TopNews>, response: Response<TopNews>) {
-                val body = response.body()
-                if (body != null) {
-                    Log.d("Test", "성공")
-                    _articles.value = body.articles
-                    Log.d("Test", "${articles.value}")
-                } else {
-                    Log.d("Test", "body null")
-                }
-            }
-
-            override fun onFailure(call: Call<TopNews>, t: Throwable) {
-                Log.d("Test", "통신 오류 : ${t.message}")
-            }
-
-        })
-         */
+    fun onArticleClicked(article: Article) {
+        _article.value = article
     }
 
 }

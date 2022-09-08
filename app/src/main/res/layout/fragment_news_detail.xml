@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.newsDetail.NewsDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.hs.newsapp.ViewModel" />
+    </data>
+
+    <FrameLayout
+        style="@style/fragment_padding"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="디테일" />
+        tools:context=".ui.newsDetail.NewsDetailFragment">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/detail_article_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/detail_article_title"
+                    style="@style/article_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@{viewmodel.article.title}"
+                    tools:text="@string/news_article_title" />
+
+                <ImageView
+                    android:id="@+id/detail_article_save_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_category_24" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detail_article_writer"
+                style="@style/article_info"
+                android:layout_marginVertical="10dp"
+                android:text="@{viewmodel.article.author}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_article_header"
+                tools:text="@string/news_article_writer" />
+
+            <TextView
+                android:id="@+id/detail_article_uploaded_time"
+                style="@style/article_info"
+                android:layout_marginStart="15dp"
+                android:text="@{viewmodel.article.publishedAt}"
+                android:textColor="@color/secondaryDarkColor"
+                app:layout_constraintBottom_toBottomOf="@id/detail_article_writer"
+                app:layout_constraintStart_toEndOf="@id/detail_article_writer"
+                app:layout_constraintTop_toTopOf="@id/detail_article_writer"
+                tools:text="@string/news_article_time" />
+
+            <ImageView
+                android:id="@+id/detail_article_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_view_img_height"
+                android:layout_marginVertical="10dp"
+                android:src="@color/secondaryDarkColor"
+                app:imageUrl="@{viewmodel.article.urlToImage}"
+                app:layout_constraintTop_toBottomOf="@id/detail_article_writer" />
+
+            <TextView
+                android:id="@+id/detail_article_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{viewmodel.article.description}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_article_img"
+                app:layout_constraintVertical_bias="0"
+                tools:text="@string/news_article_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

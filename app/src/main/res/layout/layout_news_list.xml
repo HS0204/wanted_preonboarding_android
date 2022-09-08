@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="viewModel"
-            type="com.hs.newsapp.ViewModel" />
+
         <variable
             name="article"
             type="com.hs.newsapp.model.Article" />
 
+        <variable
+            name="clickListener"
+            type="com.hs.newsapp.ui.newsList.ArticleListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/card_view_margin_bottom"
+        android:onClick="@{() -> clickListener.onClick(article)}"
         app:cardCornerRadius="@dimen/card_view_radius">
 
         <LinearLayout
@@ -44,34 +46,37 @@
                 <TextView
                     android:id="@+id/news_list_txt_article_title"
                     style="@style/article_title"
-                    android:text="@string/news_article_title"
+                    android:layout_marginTop="@dimen/card_view_height"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{article.title}"
                     app:layout_constraintBottom_toTopOf="@id/news_list_txt_article_writer"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@{article.title}"/>
+                    tools:text="@string/news_article_title" />
 
                 <TextView
                     android:id="@+id/news_list_txt_article_writer"
                     style="@style/article_info"
                     android:layout_marginTop="@dimen/card_view_txt_height"
-                    android:text="@string/news_article_writer"
+                    android:text="@{article.author}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/news_list_txt_article_uploaded_time"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/news_list_txt_article_title"
-                    tools:text="@{article.author}"/>
+                    tools:text="@string/news_article_writer" />
 
                 <TextView
                     android:id="@+id/news_list_txt_article_uploaded_time"
                     style="@style/article_info"
-                    android:text="@string/news_article_time"
+                    android:text="@{article.publishedAt}"
                     android:textColor="@color/secondaryDarkColor"
                     app:layout_constraintBottom_toBottomOf="@id/news_list_txt_article_writer"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/news_list_txt_article_writer"
                     app:layout_constraintTop_toTopOf="@id/news_list_txt_article_writer"
-                    tools:text="@{article.publishedAt}"/>
+                    tools:text="@string/news_article_time" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
