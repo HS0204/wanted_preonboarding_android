@@ -14,10 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bec15680-d4ce-46e4-b769-09d8521c501a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/BindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/BindingAdapters.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/config/ApplicationClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/config/ApplicationClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsDetail/NewsDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsDetail/NewsDetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/saved/SavedNewsListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/saved/SavedNewsListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_news_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_saved_news_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_saved_news_list.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +57,13 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/layout" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\HS\wanted_preonboarding_android\app\src\main\res\layout" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.hs.newsapp.model" />
       <recent name="com.hs.newsapp.fragment.newsDetail" />

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="article"
+            type="com.hs.newsapp.model.SavedArticle" />
+        <variable
+            name="clickListener"
+            type="com.hs.newsapp.ui.saved.SavedArticleListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(article)}"
+        app:cardCornerRadius="@dimen/card_view_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/news_list_img_cover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_view_img_height"
+                android:src="@color/secondaryDarkColor"
+                app:imageUrl="@{article.urlToImage}" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/card_view_padding">
+
+                <TextView
+                    android:id="@+id/news_list_txt_article_title"
+                    style="@style/article_title"
+                    android:layout_marginTop="@dimen/card_view_height"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{article.title}"
+                    app:layout_constraintBottom_toTopOf="@id/news_list_txt_article_writer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/news_article_title" />
+
+                <TextView
+                    android:id="@+id/news_list_txt_article_writer"
+                    style="@style/article_info"
+                    android:layout_marginTop="@dimen/card_view_txt_height"
+                    android:text="@{article.author}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/news_list_txt_article_uploaded_time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/news_list_txt_article_title"
+                    tools:text="@string/news_article_writer" />
+
+                <TextView
+                    android:id="@+id/news_list_txt_article_uploaded_time"
+                    style="@style/article_info"
+                    android:text="@{article.publishedAt}"
+                    android:textColor="@color/secondaryDarkColor"
+                    app:layout_constraintBottom_toBottomOf="@id/news_list_txt_article_writer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/news_list_txt_article_writer"
+                    app:layout_constraintTop_toTopOf="@id/news_list_txt_article_writer"
+                    tools:text="@string/news_article_time" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

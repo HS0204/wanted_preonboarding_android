@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.hs.newsapp.ui.newsList.NewsListAdapter
 import com.hs.newsapp.model.Article
+import com.hs.newsapp.model.SavedArticle
+import com.hs.newsapp.ui.saved.SavedNewsListAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -27,5 +29,11 @@ fun bindRecyclerView(recyclerView: RecyclerView,
                      data: List<Article>?) {
     val adapter = recyclerView.adapter as NewsListAdapter
     adapter.submitList(data)
+}
 
+@BindingAdapter("readAllData")
+fun bindSavedRecyclerView(recyclerView: RecyclerView,
+                     data: List<SavedArticle>?) {
+    val adapter = recyclerView.adapter as SavedNewsListAdapter
+    adapter.submitList(data)
 }

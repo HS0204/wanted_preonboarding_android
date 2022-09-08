@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.hs.newsapp.ViewModel" />
     </data>
 
     <FrameLayout
@@ -15,7 +18,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_list_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:readAllData="@{viewModel.readAllData}"
+            tools:itemCount="10"
+            tools:listitem="@layout/layout_news_list" />
 
     </FrameLayout>
 </layout>

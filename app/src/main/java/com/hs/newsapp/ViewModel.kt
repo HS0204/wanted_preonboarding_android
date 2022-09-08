@@ -27,10 +27,13 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _article = MutableLiveData<Article>()
     val article: LiveData<Article> = _article
 
+    private val _savedArticle = MutableLiveData<SavedArticle>()
+    val savedArticle: LiveData<SavedArticle> = _savedArticle
+
     /**
      Saved News List
      **/
-    private val readAllData: LiveData<List<SavedArticle>>
+    val readAllData: LiveData<List<SavedArticle>>
     private val repository: SavedArticleRepository
 
     init {
@@ -61,6 +64,10 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onArticleClicked(article: Article) {
         _article.value = article
+    }
+
+    fun onSavedArticleClicked(article: SavedArticle) {
+        _savedArticle.value = article
     }
 
     fun addArticle(article: SavedArticle) {
