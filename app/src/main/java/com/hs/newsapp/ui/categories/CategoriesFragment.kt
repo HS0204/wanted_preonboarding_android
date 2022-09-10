@@ -24,7 +24,7 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding>(
         binding.categoriesListRecyclerView.addItemDecoration(RecyclerViewMargin(margin = 50))
         binding.categoriesListRecyclerView.adapter = CategoriesAdapter(CategoriesListener { cate: Category ->
             sharedViewModel.onCategoryClicked(cate)
-            findNavController().navigate(R.id.action_categoriesFragment_to_newsListFragment)
+            findNavController().navigate(R.id.action_categoriesFragment_to_categoriesNewsListFragment)
         }, ApplicationClass.cateList)
     }
 }

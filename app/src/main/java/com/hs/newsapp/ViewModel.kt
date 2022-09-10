@@ -32,7 +32,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         Log.d("test", "뷰모델 시작")
-        _category.value = "general"
+        _category.value = ""
         tryGetNewsList()
 
         val savedArticleDao = ApplicationClass.getDatabase(application).SavedArticleDao()
@@ -40,7 +40,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         readAllData = repository.readAllData
     }
 
-    private fun tryGetNewsList() {
+    fun tryGetNewsList() {
         viewModelScope.launch {
             _status.value = NewsListStatus.LOADING
             try {

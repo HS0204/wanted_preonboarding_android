@@ -25,8 +25,8 @@
         android:label="@string/categories"
         tools:layout="@layout/fragment_categories" >
         <action
-            android:id="@+id/action_categoriesFragment_to_newsListFragment"
-            app:destination="@id/newsListFragment" />
+            android:id="@+id/action_categoriesFragment_to_categoriesNewsListFragment"
+            app:destination="@id/categoriesNewsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedNewsListFragment"
@@ -35,6 +35,14 @@
         tools:layout="@layout/fragment_saved_news_list" >
         <action
             android:id="@+id/action_savedNewsListFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesNewsListFragment"
+        android:name="com.hs.newsapp.ui.categories.CategoriesNewsListFragment"
+        android:label="CategoriesNewsListFragment" >
+        <action
+            android:id="@+id/action_categoriesNewsListFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
     </fragment>
 </navigation>

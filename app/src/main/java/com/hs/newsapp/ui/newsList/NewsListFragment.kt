@@ -1,7 +1,9 @@
 package com.hs.newsapp.ui.newsList
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.hs.newsapp.R
 import com.hs.newsapp.config.BaseFragment
