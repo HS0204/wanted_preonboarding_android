@@ -18,7 +18,7 @@ class SavedNewsListFragment : BaseFragment<FragmentSavedNewsListBinding>(Fragmen
 
         binding.viewModel = sharedViewModel
 
-        binding.newsListRecyclerView.addItemDecoration(RecyclerViewMargin())
+        binding.newsListRecyclerView.addItemDecoration(RecyclerViewMargin(margin = 70))
         binding.newsListRecyclerView.adapter = NewsListAdapter(ArticleListener { article ->
             sharedViewModel.onArticleClicked(article)
             findNavController().navigate(R.id.action_savedNewsListFragment_to_newsDetailFragment)

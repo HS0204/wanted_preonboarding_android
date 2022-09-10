@@ -6,6 +6,7 @@ import androidx.lifecycle.*
 import com.hs.newsapp.config.ApplicationClass
 import com.hs.newsapp.ui.newsList.NewsListService
 import com.hs.newsapp.model.Article
+import com.hs.newsapp.model.Category
 import com.hs.newsapp.repository.SavedArticleRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,11 +24,15 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _article = MutableLiveData<Article>()
     val article: LiveData<Article> = _article
 
+    private val _category = MutableLiveData<String>()
+    val category: LiveData<String> = _category
+
     val readAllData: LiveData<List<Article>>
     private val repository: SavedArticleRepository
 
     init {
         Log.d("test", "뷰모델 시작")
+        _category.value = "general"
         tryGetNewsList()
 
         val savedArticleDao = ApplicationClass.getDatabase(application).SavedArticleDao()
@@ -40,7 +45,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             _status.value = NewsListStatus.LOADING
             try {
                 Log.d("test", "성공")
-                val response = NewsListService.newsListService.getNews(country = "kr", apiKey = BuildConfig.NEWS_API_KEY)
+                val response = NewsListService.newsListService.getNews(country = "kr", category = _category.value!!, apiKey = BuildConfig.NEWS_API_KEY)
                 _articles.value = response.articles
                 _status.value = NewsListStatus.DONE
             } catch (e: Exception) {
@@ -54,6 +59,10 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onArticleClicked(article: Article) {
         _article.value = article
+    }
+
+    fun onCategoryClicked(category: Category) {
+        _category.value = category.title
     }
 
     fun addArticle(article: Article) {

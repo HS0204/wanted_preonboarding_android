@@ -15,11 +15,21 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
         val imgUri = imgUrl.toUri().buildUpon().scheme("https").build()
         Glide.with(imgView.context)
                 .load(imgUri)
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_baseline_image_search_24)
+                .error(R.drawable.ic_baseline_image_not_supported_24)
                 .apply(RequestOptions().centerCrop())
                 .into(imgView)
     }
+}
+
+@BindingAdapter("iconUrl")
+fun bindCateIcon(imgView: ImageView, iconUrl: Int?) {
+    Glide.with(imgView.context)
+            .load(iconUrl)
+            .placeholder(R.drawable.ic_baseline_image_search_24)
+            .error(R.drawable.ic_baseline_image_not_supported_24)
+            .apply(RequestOptions().fitCenter())
+            .into(imgView)
 }
 
 @BindingAdapter("savedStatus")
