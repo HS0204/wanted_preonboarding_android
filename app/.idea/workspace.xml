@@ -14,13 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bec15680-d4ce-46e4-b769-09d8521c501a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/categories/CategoriesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/categories/CategoriesFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListRetrofitInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/network/NewsRetrofitInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/ui/newsList/NewsListService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hs/newsapp/network/NewsService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +62,8 @@
       <recent name="C:\Users\user\Desktop\HS\wanted_preonboarding_android\app\src\main\res\layout" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.hs.newsapp.network" />
+      <recent name="com.hs.newsapp.repository" />
       <recent name="com.hs.newsapp.model" />
       <recent name="com.hs.newsapp.fragment.newsDetail" />
     </key>

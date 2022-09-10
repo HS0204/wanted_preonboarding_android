@@ -1,10 +1,10 @@
-package com.hs.newsapp.ui.newsList
+package com.hs.newsapp.network
 
 import com.hs.newsapp.model.TopNews
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface NewsListRetrofitInterface {
+interface NewsRetrofitInterface {
     @GET("v2/top-headlines")
     suspend fun getNews(
             @Query("country") country: String,

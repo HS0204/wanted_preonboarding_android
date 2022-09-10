@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.hs.newsapp.config.ApplicationClass
-import com.hs.newsapp.ui.newsList.NewsListService
+import com.hs.newsapp.network.NewsService
 import com.hs.newsapp.model.Article
 import com.hs.newsapp.model.Category
 import com.hs.newsapp.repository.SavedArticleRepository
@@ -45,7 +45,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             _status.value = NewsListStatus.LOADING
             try {
                 Log.d("test", "성공")
-                val response = NewsListService.newsListService.getNews(country = "kr", category = _category.value!!, apiKey = BuildConfig.NEWS_API_KEY)
+                val response = NewsService.newsList.getNews(country = "kr", category = _category.value!!, apiKey = BuildConfig.NEWS_API_KEY)
                 _articles.value = response.articles
                 _status.value = NewsListStatus.DONE
             } catch (e: Exception) {
