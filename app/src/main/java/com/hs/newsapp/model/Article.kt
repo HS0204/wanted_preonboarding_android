@@ -8,12 +8,12 @@ import androidx.room.PrimaryKey
 data class Article(
         @PrimaryKey(autoGenerate = true)
         val id: Int,
-        val author: String,
-        val content: String,
-        val description: String,
-        val publishedAt: String,
-        val title: String,
-        val url: String,
-        val urlToImage: String,
+        var author: String,
+        var content: String,
+        var description: String,
+        var publishedAt: String,
+        var title: String,
+        var url: String,
+        var urlToImage: String,
         val savedStatus: String
 )

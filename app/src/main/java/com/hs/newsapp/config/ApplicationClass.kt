@@ -2,6 +2,7 @@ package com.hs.newsapp.config
 
 import android.app.Application
 import android.content.Context
+import android.widget.Toast
 import androidx.room.Room
 import com.hs.newsapp.R
 import com.hs.newsapp.data.SavedArticleDatabase
@@ -42,7 +43,7 @@ class ApplicationClass : Application() {
     override fun onCreate() {
         super.onCreate()
         initRetrofitInstance()
-        initializeData()
+        initializeCateData()
     }
 
     private fun initRetrofitInstance() {
@@ -59,7 +60,7 @@ class ApplicationClass : Application() {
                 .build()
     }
 
-    private fun initializeData() {
+    private fun initializeCateData() {
 
         cateList = arrayListOf<Category>()
 

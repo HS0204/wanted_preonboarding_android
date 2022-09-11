@@ -33,7 +33,6 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: SavedArticleRepository
 
     init {
-        Log.d("test", "뷰모델 시작")
         _category.value = ""
         tryGetNewsList()
 
@@ -46,16 +45,13 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _status.value = NewsListStatus.LOADING
             try {
-                Log.d("test", "성공")
                 val response = NewsService.newsList.getNews(country = "kr", category = _category.value!!, apiKey = BuildConfig.NEWS_API_KEY)
                 _articles.value = response.articles
                 _status.value = NewsListStatus.DONE
             } catch (e: Exception) {
-                Log.d("test", "실패 이유 ${e}")
                 _status.value = NewsListStatus.ERROR
                 _articles.value = listOf()
             }
-            Log.d("test", "끝")
         }
     }
 
@@ -67,20 +63,22 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         _category.value = category.title
     }
 
-    fun addArticle(article: Article) {
+    private fun addArticle(article: Article) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addArticle(article)
         }
     }
 
-    fun deleteArticle(article: Article) {
+    private fun deleteArticle(article: Article) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteArticle(article)
         }
     }
 
     fun insertDataToDatabase() {
-        val writer = _article.value?.author
+        inputCheck()
+
+        val writer = _article.value!!.author
         val content = _article.value!!.content
         val description = _article.value!!.description
         val publishedAt = _article.value!!.publishedAt
@@ -88,16 +86,34 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         val url = _article.value!!.url
         val urlToImage = _article.value!!.urlToImage
 
-        /** !!!!!!!!!NULL 체크 완벽하지 않음!!!!!!! **/
-        if (writer == null) {
-            val curArticle = Article(0, "-", content, description, publishedAt, title, url, urlToImage, "1")
-            addArticle(curArticle)
-        } else {
-            val curArticle = Article(0, writer, content, description, publishedAt, title, url, urlToImage, "1")
-            addArticle(curArticle)
-        }
+        val curArticle = Article(0, writer, content, description, publishedAt, title, url, urlToImage, "1")
+        addArticle(curArticle)
 
         Toast.makeText(this.getApplication(), "기사 추가", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun inputCheck() {
+        if (_article.value?.author.isNullOrEmpty()) {
+            _article.value?.author = "-"
+        }
+        if (_article.value?.content.isNullOrEmpty()) {
+            _article.value?.content = "-"
+        }
+        if (_article.value?.description.isNullOrEmpty()) {
+            _article.value?.description = "-"
+        }
+        if (_article.value?.publishedAt.isNullOrEmpty()) {
+            _article.value?.publishedAt = "-"
+        }
+        if (_article.value?.title.isNullOrEmpty()) {
+            _article.value?.title = "-"
+        }
+        if (_article.value?.url.isNullOrEmpty()) {
+            _article.value?.url = "-"
+        }
+        if (_article.value?.urlToImage.isNullOrEmpty()) {
+            _article.value?.urlToImage = "-"
+        }
     }
 
     fun deleteDataFromDatabase() {
