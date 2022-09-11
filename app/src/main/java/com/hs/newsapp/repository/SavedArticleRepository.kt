@@ -11,4 +11,8 @@ class SavedArticleRepository(private val savedArticleDaO: SavedArticleDao) {
     suspend fun addArticle(article: Article) {
         savedArticleDaO.addArticle(article)
     }
+
+    suspend fun deleteArticle(article: Article) {
+        savedArticleDaO.deleteArticle(article)
+    }
 }

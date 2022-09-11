@@ -18,7 +18,11 @@
         android:id="@+id/newsDetailFragment"
         android:name="com.hs.newsapp.ui.newsDetail.NewsDetailFragment"
         android:label="@string/news_article_title"
-        tools:layout="@layout/fragment_news_detail" />
+        tools:layout="@layout/fragment_news_detail" >
+        <action
+            android:id="@+id/action_newsDetailFragment_to_savedNewsListFragment"
+            app:destination="@id/savedNewsListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.hs.newsapp.ui.categories.CategoriesFragment"

@@ -2,12 +2,14 @@ package com.hs.newsapp
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.*
 import com.hs.newsapp.config.ApplicationClass
 import com.hs.newsapp.network.NewsService
 import com.hs.newsapp.model.Article
 import com.hs.newsapp.model.Category
 import com.hs.newsapp.repository.SavedArticleRepository
+import com.hs.newsapp.ui.newsDetail.NewsDetailFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -71,6 +73,12 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun deleteArticle(article: Article) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteArticle(article)
+        }
+    }
+
     fun insertDataToDatabase() {
         val writer = _article.value?.author
         val content = _article.value!!.content
@@ -88,6 +96,13 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             val curArticle = Article(0, writer, content, description, publishedAt, title, url, urlToImage, "1")
             addArticle(curArticle)
         }
+
+        Toast.makeText(this.getApplication(), "기사 추가", Toast.LENGTH_SHORT).show()
+    }
+
+    fun deleteDataFromDatabase() {
+        deleteArticle(_article.value!!)
+        Toast.makeText(this.getApplication(), "기사 삭제", Toast.LENGTH_SHORT).show()
     }
 
 }

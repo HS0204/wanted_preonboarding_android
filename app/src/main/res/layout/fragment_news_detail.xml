@@ -7,6 +7,9 @@
         <variable
             name="viewmodel"
             type="com.hs.newsapp.ViewModel" />
+        <variable
+            name="dbfunction"
+            type="com.hs.newsapp.ui.newsDetail.NewsDetailFragment" />
     </data>
 
     <FrameLayout
@@ -38,7 +41,7 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="@dimen/fragment_padding"
                 android:layout_weight="1"
-                android:onClick="@{() -> viewmodel.insertDataToDatabase()}"
+                android:onClick="@{() -> viewmodel.article.savedStatus == null ? viewmodel.insertDataToDatabase() : viewmodel.deleteDataFromDatabase()}"
                 android:src="@drawable/ic_baseline_star_outline_24"
                 savedStatus="@{viewmodel.article.savedStatus}"
                 app:layout_constraintEnd_toEndOf="parent"
