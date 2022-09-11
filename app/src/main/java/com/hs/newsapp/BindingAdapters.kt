@@ -1,5 +1,6 @@
 package com.hs.newsapp
 
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -52,4 +53,23 @@ fun bindRecyclerView(recyclerView: RecyclerView,
                      data: List<Article>?) {
     val adapter = recyclerView.adapter as NewsListAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("newsApiStatus")
+fun bindStatus(statusImageView: ImageView,
+               status: ViewModel.NewsListStatus?) {
+    when (status) {
+        ViewModel.NewsListStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_baseline_youtube_searched_for_24)
+        }
+        ViewModel.NewsListStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_baseline_search_off_24)
+        }
+        ViewModel.NewsListStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }
+        else -> {}
+    }
 }
