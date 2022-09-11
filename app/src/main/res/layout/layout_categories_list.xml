@@ -4,51 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="category"
             type="com.hs.newsapp.model.Category" />
+
         <variable
             name="clickListener"
             type="com.hs.newsapp.ui.categories.CategoriesListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/circle_stroke"
-        android:onClick="@{() -> clickListener.onClick(category)}">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cate_stroke"
+        android:onClick="@{() -> clickListener.onClick(category)}"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/categories_list_img_icon"
+            iconUrl="@{category.img}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp">
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_wysiwyg_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/categories_list_img_icon"
-                iconUrl="@{category.img}"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="20dp"
-                android:src="@drawable/ic_baseline_wysiwyg_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/categories_list_txt_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:paddingHorizontal="5dp"
-                android:text="@{category.title}"
-                app:layout_constraintBottom_toBottomOf="@+id/categories_list_img_icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:text="@string/categories_list_name" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/categories_list_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingHorizontal="5dp"
+            android:text="@{category.title}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categories_list_img_icon"
+            tools:text="@string/categories_list_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
