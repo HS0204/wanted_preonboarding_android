@@ -1,9 +1,9 @@
 # wanted_preonboarding_android
 
-- 원티드 프리온보딩 Android 코스 사전과제
+- [원티드 프리온보딩 Android 코스](https://www.wanted.co.kr/events/pre_ob_and_1?utm_source=wanted&utm_medium=share) 사전과제
 - [News API](https://newsapi.org/)를 활용한 뉴스 앱
 - 개발일자 : 2022년 9월 6일 ~ 9월 11일 (6일)
-- ViewBinding, DataBinding, LiveData, Navigation, Retrofit, OkHttp, Glide, Room, Dokka
+- ViewBinding, DataBinding, LiveData, ViewModel, Navigation, Retrofit, OkHttp, Glide, Room, Dokka
 - [프로젝트 문서화 파일](https://bit.ly/3BwhME3)
 
 ## 뉴스 리스트
