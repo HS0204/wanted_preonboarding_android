@@ -2,7 +2,6 @@ package com.hs.newsapp.config
 
 import android.app.Application
 import android.content.Context
-import android.widget.Toast
 import androidx.room.Room
 import com.hs.newsapp.R
 import com.hs.newsapp.data.SavedArticleDatabase

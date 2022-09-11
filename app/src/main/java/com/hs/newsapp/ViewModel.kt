@@ -1,7 +1,6 @@
 package com.hs.newsapp
 
 import android.app.Application
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.*
 import com.hs.newsapp.config.ApplicationClass
@@ -9,7 +8,6 @@ import com.hs.newsapp.network.NewsService
 import com.hs.newsapp.model.Article
 import com.hs.newsapp.model.Category
 import com.hs.newsapp.repository.SavedArticleRepository
-import com.hs.newsapp.ui.newsDetail.NewsDetailFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
